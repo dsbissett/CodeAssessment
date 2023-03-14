@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeAssessment.Blazor", "Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeAssessment.Cqrs", "CodeAssessment.Cqrs\CodeAssessment.Cqrs.csproj", "{3FDB3015-2B41-44E9-A9D0-9A7C30788E62}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Database\Database.sqlproj", "{77632E88-BBE5-4D5C-B459-8F904A445744}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,12 @@ Global
 		{3FDB3015-2B41-44E9-A9D0-9A7C30788E62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FDB3015-2B41-44E9-A9D0-9A7C30788E62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FDB3015-2B41-44E9-A9D0-9A7C30788E62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77632E88-BBE5-4D5C-B459-8F904A445744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77632E88-BBE5-4D5C-B459-8F904A445744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77632E88-BBE5-4D5C-B459-8F904A445744}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{77632E88-BBE5-4D5C-B459-8F904A445744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77632E88-BBE5-4D5C-B459-8F904A445744}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77632E88-BBE5-4D5C-B459-8F904A445744}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
