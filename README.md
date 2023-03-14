@@ -1,6 +1,16 @@
 # Code Assessment
 This repo contains a solution that showcases my frontend and backend code.
 
+# TODO's
+- Add more tests
+- Add UI tests
+- Add BDD tests
+- Rough-in Blazor project
+- Add CRUD operations to MVC project
+- Finish Angular project UI
+- Finish React project UI
+- Add messaging layer to CQRS project
+  
 # Projects
 ## ___`CodeAssessment`___
 This project is an ASPNET CORE Web API project.  It contains a CustomersController and CRUD actions.
