@@ -1,6 +1,8 @@
 # Code Assessment
 This repo contains a solution that showcases my frontend and backend code.
 
+![Code Assessment](https://github.com/dsbissett/CodeAssessment/actions/workflows/dotnet.yml/badge.svg)
+
 # TODO's
 - Add more tests
 - Add UI tests
