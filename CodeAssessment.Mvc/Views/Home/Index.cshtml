@@ -1,0 +1,30 @@
+﻿@using Data.Models
+@model IEnumerable<Data.Models.Customer>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.Select((value, idx) => new { idx, value }))
+        {
+            <tr>
+                <th scope="row">@item.idx</th>
+
+                <td>@item.value.CustomerId</td>
+                <td>@item.value.CompanyName</td>
+                <td>@item.value.ContactName</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
