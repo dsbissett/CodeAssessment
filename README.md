@@ -21,7 +21,12 @@ This project is an ASPNET CORE Web API project.  It contains a CustomersControll
 This project is an ASPNET CORE web project using Angular.  A sample datagrid has been roughed-in using Angular.  CRUD actions on the controller retreive data from the `CodeAssessment.Service` project, which calls to `CodeAssessment.Data`.  I don't have an professional experience with the new Angular, but lots with AngularJS 1.3.9.  I was surprised to see how similar things were between AngularJS and the new Angular.
 
 ## ___`CodeAssessment.Blazor`___
-This project is stubbed in; I haven't yet started on the code.
+~~This project is stubbed in; I haven't yet started on the code.~~
+
+_This project will be deleted_
+
+## ___`CodeAssessment.BlazorServer`___
+Basic implementation of the CQRS layer via MediatR.  I will delete `CodeAssessment.Blazor` since it appears that debugging hosted web assembly is a PITA.
 
 ## ___`CodeAssessment.Cqrs`___
 This project uses MediatR to handle commands and queries as well as to add behaviors and notifications.  The notifications are stubs and I don't plan to complete the email notification or teams notification.  They are there for demonstration purposes.

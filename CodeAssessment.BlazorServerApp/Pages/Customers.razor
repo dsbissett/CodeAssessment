@@ -1,0 +1,59 @@
+﻿@page "/customers"
+@using MediatR
+@using Service.Queries
+@using global::Data.Models
+@using System.Diagnostics
+@inject IMediator mediator
+
+<h3>Customers</h3>
+@if (customerList == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="text-center">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in customerList.Select((value, idx) => new { idx, value }))
+            {
+                <tr>
+                        <th scope="row">@item.idx</th>
+
+                        <td>@item.value.CustomerId</td>
+                        <td>@item.value.CompanyName</td>
+                        <td>@item.value.ContactName</td>
+                    </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}
+
+
+@code {
+    
+    protected IEnumerable<Customer> customerList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var result = await mediator.Send(new GetAllCustomersQuery());
+            this.customerList = result;
+        }
+        catch (Exception e)
+        {
+            Debug.WriteLine(e.Message);
+        }
+    }
+
+}
