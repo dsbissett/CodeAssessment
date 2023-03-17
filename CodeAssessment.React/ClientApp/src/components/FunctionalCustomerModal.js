@@ -15,7 +15,7 @@ import {
   Button,
 } from "reactstrap";
 
-function UpdateCustomerModal3(props){
+function FunctionalCustomerModal(props){
     const [ customerId, setCustomerId ] = useState();
     const [ companyName, setCompanyName ] = useState();
     const [ contactName, setContactName ] = useState();
@@ -207,4 +207,4 @@ function UpdateCustomerModal3(props){
     ;
 }
 
-export default UpdateCustomerModal3;
+export default FunctionalCustomerModal;

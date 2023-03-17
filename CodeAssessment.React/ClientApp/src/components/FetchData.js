@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import { Modal, ModalBody, Form, FormGroup, Label, Input, Col, Row, ModalFooter, ModalHeader, Table, Button } from 'reactstrap';
-import UpdateCustomerModal3 from './UpdateCustomerModal3';
+import FunctionalCustomerModal from './FunctionalCustomerModal';
 
 
 export class FetchData extends Component {
@@ -170,7 +170,7 @@ export class FetchData extends Component {
           </ModalFooter>
         </Modal>
 
-        <UpdateCustomerModal3 isOpen={this.state.modalIsOpen} closeModal={this.closeCreateModal} customer={this.state.customers[0]}></UpdateCustomerModal3>
+        <FunctionalCustomerModal isOpen={this.state.modalIsOpen} closeModal={this.closeCreateModal} customer={this.state.customers[0]}></FunctionalCustomerModal>
 
       </div>
     );

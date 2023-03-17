@@ -15,7 +15,7 @@ import {
   Button,
 } from "reactstrap";
 
-export class UpdateCustomerModal2 extends Component {
+export class ClassBasedCustomerModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
