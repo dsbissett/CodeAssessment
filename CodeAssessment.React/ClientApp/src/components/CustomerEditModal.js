@@ -28,7 +28,7 @@ export default function CustomerEditModal(props) {
       body: JSON.stringify(customer),
     };
 
-    const response = await fetch("customers", requestOptions).catch((error) =>
+    const response = await fetch(props.updateRoute, requestOptions).catch((error) =>
       console.log(error)
     );
 

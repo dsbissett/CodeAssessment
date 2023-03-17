@@ -1,11 +1,13 @@
-﻿using Data.Interfaces;
+﻿using System.Linq.Expressions;
+using Data.Interfaces;
 using Data.Models;
+using Service.Infrastructure;
 
 namespace Service
 {
     public interface IService<T> where T : class
     {
-        IEnumerable<T> GetAll();
+        IQueryable<T> GetAll();
 
         Task<IEnumerable<T>> GetAllAsync();
 
@@ -13,6 +15,11 @@ namespace Service
 
         Task<T> GetAsync(int id);
 
+        Task<PagedList<T>> GetPagedAsync(Pagination pagination);
+
+        Task<PagedContainer<Customer>> GetPagedContainerAsync(Pagination pagination);
+
+        Task<IEnumerable<T>> FindByAsync(string id);
 
         T Add(T t);
 
@@ -27,6 +34,8 @@ namespace Service
         void Remove(T t);
 
         Task RemoveAsync(T t);
+
+        Task RemoveAsync(string id);
     }
 
     public class CustomerService : IService<Customer>
@@ -38,7 +47,7 @@ namespace Service
             this.repo = repo;
         }
 
-        public IEnumerable<Customer> GetAll()
+        public IQueryable<Customer> GetAll()
         {
             return this.repo.GetAll();
         }
@@ -56,6 +65,21 @@ namespace Service
         public async Task<Customer> GetAsync(int id)
         {
             return await this.repo.GetAsync(id) ?? new Customer();
+        }
+
+        public async Task<IEnumerable<Customer>> FindByAsync(string id)
+        {
+            return await this.repo.FindByAsync(x => x.CustomerId == id);
+        }
+
+        public async Task<PagedList<Customer>> GetPagedAsync(Pagination pagination)
+        {
+            return await PagedList<Customer>.ToPagedListAsync(this.GetAll(), pagination.PageNumber, pagination.PageSize);
+        }
+
+        public async Task<PagedContainer<Customer>> GetPagedContainerAsync(Pagination pagination)
+        {
+            return await PagedContainer<Customer>.ToPagedContainerAsync(this.GetAll(), pagination.PageNumber, pagination.PageSize);
         }
 
         public Customer Add(Customer customer)

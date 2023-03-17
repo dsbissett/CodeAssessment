@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Data.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Data.Contexts;
 
@@ -119,6 +120,7 @@ public partial class NorthwindContext : DbContext
             entity.Property(e => e.ProductName).HasMaxLength(40);
         });
 
+        modelBuilder.Entity<Customer>().Ignore(x => x.Links);
         modelBuilder.Entity<Customer>(entity =>
         {
             entity.HasIndex(e => e.City, "City");

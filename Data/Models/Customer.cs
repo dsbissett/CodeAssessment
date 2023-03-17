@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using RiskFirst.Hateoas.Models;
 
 namespace Data.Models;
+
+public partial class Customer : LinkContainer
+{
+}
 
 public partial class Customer
 {

@@ -1,5 +1,5 @@
 import { Component } from "react";
-import CustomersGrid from "./CustomersGrid";
+import CustomerPagedGrid from "./CustomerPagedGrid";
 
 export class ViewCustomers extends Component {
     constructor(props){
@@ -7,6 +7,6 @@ export class ViewCustomers extends Component {
     }
 
     render(){
-        return <CustomersGrid />
+        return <CustomerPagedGrid />
     }
 }
